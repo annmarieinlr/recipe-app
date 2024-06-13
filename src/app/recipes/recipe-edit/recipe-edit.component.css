@@ -2,3 +2,7 @@
     margin-right: 10px; /* Adjust the spacing as needed */
     margin-top: 10px;
 }
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
