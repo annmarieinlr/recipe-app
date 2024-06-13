@@ -28,4 +28,9 @@ export class ShoppingListService {
         this.ingredients.push(...ingredients); // three dots is a spread operator that pushes our array as a list of ingredients
         this.ingredientsChanged.next(this.ingredients.slice());
     }
+
+    updateIngredient(index: number, newIngredient: Ingredient) {
+        this.ingredients[index] = newIngredient;
+        this.ingredientsChanged.next(this.ingredients.slice());
+    }
 }
