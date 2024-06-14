@@ -1,12 +1,13 @@
 <div class="row">
     <!-- The class below spans the whole row -->
+     <!-- I took this off the save button to ask Br. Del Sol about:  [disabled]="!recipeForm.valid"-->
     <div class="col-xs-12"> 
         <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-xs-12">
                     <button type="submit" class="btn btn-success btn-spacing"
-                    [disabled]="!recipeForm.valid">Save</button>
-                    <button type="submit" class="btn btn-danger btn-spacing">Cancel</button>
+                    >Save</button>
+                    <button type="submit" class="btn btn-danger btn-spacing" (click)="onCancel()">Cancel</button>
                 </div>
             </div>
             <div class="row">
@@ -27,13 +28,14 @@
                         <label for="imagePath">Image URL</label>
                         <input type="text" id="imagePath" 
                         formControlName="imagePath"
-                        class="form-control">
+                        class="form-control"
+                        #imagePath>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <img src="" class="img-responsive">
+                    <img [src]="imagePath.value" class="img-responsive">
                 </div>
             </div>
             <div class="row">
